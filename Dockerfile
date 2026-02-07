@@ -6,18 +6,22 @@ FROM base AS deps
 COPY package.json package-lock.json* ./
 RUN npm ci --ignore-scripts
 
+FROM base AS dev
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+RUN npx prisma generate
+CMD ["npm", "run", "dev"]
+
 FROM base AS builder
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-
 RUN npx prisma generate
-
 ENV NEXT_TELEMETRY_DISABLED 1
 RUN npm run build
 
 FROM base AS runner
 WORKDIR /app
-
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV PORT 4000
