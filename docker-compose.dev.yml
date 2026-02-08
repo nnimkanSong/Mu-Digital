@@ -5,8 +5,8 @@ services:
       context: .
       dockerfile: Dockerfile
       target: dev
-    network_mode: "host"
-
+    ports:
+      - "4000:4000"
     volumes:
       - .:/app
       - /app/node_modules
@@ -25,9 +25,9 @@ services:
       context: .
       dockerfile: Dockerfile
       target: dev
-    
-    network_mode: "host"
-    
+    # ✅ ลบ network_mode: "host" ออก แล้วระบุพอร์ตสำหรับ Prisma Studio
+    ports:
+      - "5555:5555"
     command: npx prisma studio --hostname 0.0.0.0 --port 5555
     volumes:
       - .:/app
