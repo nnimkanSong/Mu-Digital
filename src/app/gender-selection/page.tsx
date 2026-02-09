@@ -1,6 +1,8 @@
 "use client";
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from "react";
+// 1. เพิ่มการ import next/image ที่นี่
+import Image from 'next/image';
 
 type Star = {
   top: string;
@@ -17,7 +19,7 @@ export default function SelectionPage() {
 
   // ฟังก์ชันส่งค่าไปหน้า 2 ผ่าน URL เช่น /result-page?gender=Male
   const selectGender = (gender: string) => {
-    router.push(`/date_month_year?gender=${gender}`);
+    router.push(`/birthday?gender=${gender}`);
   };
 
   useEffect(() => {
@@ -60,10 +62,12 @@ export default function SelectionPage() {
               {/* Aura Behind Image */}
               <div className="absolute inset-0 bg-blue-500/5 blur-3xl rounded-full scale-75 group-hover:bg-blue-500/20 transition-all duration-700"></div>
               
-              <img 
-                src="/male.png" 
-                alt="Male" 
-                className="relative z-10 w-full h-full object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.7)] group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
+              {/* 2. แก้ไขส่วนรูปภาพชาย เป็น next/image และใช้ไฟล์ .svg */}
+              <Image 
+                src="/male.svg"  // เปลี่ยนเป็น .svg
+                alt="Male"
+                fill // ใช้ fill แทน w-full h-full
+                className="relative z-10 object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.7)] group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
               />
             </div>
             
@@ -84,10 +88,12 @@ export default function SelectionPage() {
               {/* Aura Behind Image */}
               <div className="absolute inset-0 bg-pink-500/5 blur-3xl rounded-full scale-75 group-hover:bg-pink-500/20 transition-all duration-700"></div>
 
-              <img 
-                src="/female.png" 
-                alt="Female" 
-                className="relative z-10 w-full h-full object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.7)] group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
+              {/* 3. แก้ไขส่วนรูปภาพหญิง เป็น next/image และใช้ไฟล์ .svg */}
+              <Image 
+                src="/female.svg" // เปลี่ยนเป็น .svg
+                alt="Female"
+                fill // ใช้ fill แทน w-full h-full
+                className="relative z-10 object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.7)] group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
               />
             </div>
 
