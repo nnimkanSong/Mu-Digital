@@ -107,11 +107,11 @@ function BirthdayContent() {
 			<motion.div
 				initial={{ opacity: 0, scale: 0.9 }}
 				animate={{ opacity: 1, scale: 1 }}
-				className="z-10 w-full max-w-xl p-10 md:p-14 bg-white/[0.02] backdrop-blur-[30px] rounded-[3.5rem] border border-white/10 shadow-[0_0_100px_rgba(0,0,0,0.8)] text-center relative overflow-visible"
+				className="z-10 w-full max-w-3xl p-10 md:p-20 bg-white/[0.02] backdrop-blur-[30px] rounded-[3.5rem] border border-white/10 shadow-[0_0_100px_rgba(0,0,0,0.8)] text-center relative overflow-visible"
 			>
 				<div className="absolute inset-0 rounded-[3.5rem] border border-yellow-500/10 shadow-[inset_0_0_40px_rgba(255,215,0,0.05)] animate-pulse" />
 				<h2 className="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-200 py-4 leading-[1.2] mb-2 drop-shadow-[0_0_20px_rgba(251,191,36,0.5)]">
-					วารกำเนิด
+					วันเกิด
 				</h2>
 				<p className="text-purple-300/40 tracking-widest text-xs sm:text-base uppercase mb-12">
 					Identity Confirmed:{" "}

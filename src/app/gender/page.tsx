@@ -52,7 +52,7 @@ export default function SelectionPage() {
 					{/* ปุ่มเพศชาย */}
 					<button
 						onClick={() => selectGender("ชาย")}
-						className="group relative flex-1 flex flex-col items-center p-5 sm:p-10 rounded-[2.5rem] border border-white/5 bg-white/[0.02] backdrop-blur-2xl transition-all duration-700 hover:bg-blue-900/10 hover:border-blue-500/40 hover:-translate-y-4 hover:shadow-[0_20px_80px_rgba(59,130,246,0.2)]"
+						className="group relative flex-1 flex flex-col items-center p-5 sm:p-10 rounded-[2.5rem] border border-white/5 bg-white/[0.02] backdrop-blur-2xl transition-all duration-700 hover:bg-blue-900/10 hover:border-blue-500/40 hover:-translate-y-4 hover:shadow-[0_20px_80px_rgba(59,130,246,0.2)] cursor-pointer"
 					>
 						<div className="relative w-full aspect-[3/4] max-h-[50vh] flex items-center justify-center overflow-visible cursor-pointer">
 							<div className="absolute inset-0 bg-blue-500/5 blur-3xl rounded-full scale-75 group-hover:bg-blue-500/20 transition-all duration-700"></div>
@@ -74,7 +74,7 @@ export default function SelectionPage() {
 					{/* ปุ่มเพศหญิง */}
 					<button
 						onClick={() => selectGender("หญิง")}
-						className="group relative flex-1 flex flex-col items-center p-5 sm:p-10 rounded-[2.5rem] border border-white/5 bg-white/[0.02] backdrop-blur-2xl transition-all duration-700 hover:bg-pink-900/10 hover:border-pink-500/40 hover:-translate-y-4 hover:shadow-[0_20px_80px_rgba(236,72,153,0.2)]"
+						className="group relative flex-1 flex flex-col items-center p-5 sm:p-10 rounded-[2.5rem] border border-white/5 bg-white/[0.02] backdrop-blur-2xl transition-all duration-700 hover:bg-pink-900/10 hover:border-pink-500/40 hover:-translate-y-4 hover:shadow-[0_20px_80px_rgba(236,72,153,0.2)] cursor-pointer"
 					>
 						<div className="relative w-full aspect-[3/4] max-h-[50vh] flex items-center justify-center overflow-visible cursor-pointer">
 							<div className="absolute inset-0 bg-pink-500/5 blur-3xl rounded-full scale-75 group-hover:bg-pink-500/20 transition-all duration-700"></div>
