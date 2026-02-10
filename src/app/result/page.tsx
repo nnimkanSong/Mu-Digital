@@ -2,6 +2,7 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { motion } from "framer-motion";
 import { useSearchParams } from "next/navigation";
+import { IterationCw, LoaderPinwheel } from "lucide-react";
 
 interface HoroscopeResult {
 	sequence: number;
@@ -172,7 +173,7 @@ function WheelContent() {
 					<h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-100 to-yellow-500 drop-shadow-[0_0_10px_rgba(234,179,8,0.8)] tracking-wider">
 						ผลคำทำนายของท่าน
 					</h1>
-					<p className="text-slate-400 text-sm mt-2 font-mono opacity-80 uppercase tracking-widest">
+					<p className="text-slate-400 text-sm mt-2 font-mono opacity-80 uppercase tracking-widest sm:text-base">
 						{gender === "ชาย" ? "♂ ชาย" : "♀ หญิง"} • พ.ศ. {yearBE} • {monthName}
 					</p>
 				</div>
@@ -245,16 +246,17 @@ function WheelContent() {
 									<div className="flex gap-3">
 										<button
 											onClick={() => setResult(null)}
-											className="flex-1 py-3 rounded-xl font-bold bg-slate-700 hover:bg-slate-600 text-white transition"
+											className="flex-1 py-3 rounded-xl font-bold bg-slate-700 hover:bg-slate-600 text-white transition cursor-pointer"
 										>
 											ปิด
 										</button>
 
 										<button
 											onClick={() => (window.location.href = "/")}
-											className="flex-1 py-3 rounded-xl font-bold bg-gradient-to-r from-red-600 to-red-800 hover:from-red-500 hover:to-red-700 text-white transition shadow-lg"
+											className="flex gap-2 flex-1 py-3 rounded-xl justify-center items-center font-bold bg-gradient-to-r from-red-600 to-red-800 hover:from-red-500 hover:to-red-700 text-white transition shadow-lg cursor-pointer"
 										>
-											↻ ทำนายใหม่
+											<IterationCw className="size-4" />
+											ทำนายใหม่
 										</button>
 									</div>
 								</motion.div>
@@ -265,7 +267,7 @@ function WheelContent() {
 						<button
 							onClick={handleSpinClick}
 							disabled={isSpinning}
-							className={`relative group w-full max-w-xs py-4 rounded-xl font-black text-xl uppercase tracking-widest transition-all duration-100 ${
+							className={`relative group w-full max-w-xs py-4 rounded-xl font-black text-xl uppercase tracking-widest transition-all duration-100 cursor-pointer ${
 								isSpinning
 									? "opacity-50 cursor-not-allowed translate-y-2"
 									: "hover:scale-105"
@@ -288,7 +290,10 @@ function WheelContent() {
 							>
 								{isSpinning ? (
 									<>
-										<span className="animate-spin">⚙️</span> กำลังคำนวณ...
+										<span className="animate-spin">
+											<LoaderPinwheel />
+										</span>{" "}
+										กำลังคำนวณ...
 									</>
 								) : (
 									"🔮 เปิดดวงชะตา"
