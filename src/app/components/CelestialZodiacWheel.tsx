@@ -2,28 +2,32 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import PopupWordle from './Popup-Wordle';
 
 export default function LuckyWheel() {
   const [rotation, setRotation] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const spinWheel = () => {
     if (isSpinning) return;
 
     setIsSpinning(true);
+    setShowPopup(false);
     // หมุนเพิ่ม 1800-2160 องศา (5-6 รอบ)
     const newRotation = rotation + 1800 + Math.floor(Math.random() * 360);
     setRotation(newRotation);
 
     setTimeout(() => {
       setIsSpinning(false);
+      setShowPopup(true);
     }, 4000);
   };
 
   return (
     // 1. Background: ไล่เฉดสีม่วงดำ แบบท้องฟ้ายามค่ำคืนงานวัด
     <div className="flex flex-col items-center justify-center min-h-screen bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900 via-slate-900 to-black gap-12 overflow-hidden relative">
-      
+
       {/* Background Decor: ไฟงานวัดเบลอๆ ด้านหลัง */}
       <div className="absolute top-10 left-10 w-32 h-32 bg-pink-500 rounded-full blur-[100px] opacity-20 animate-pulse"></div>
       <div className="absolute bottom-10 right-10 w-32 h-32 bg-yellow-500 rounded-full blur-[100px] opacity-20 animate-pulse delay-700"></div>
@@ -40,18 +44,18 @@ export default function LuckyWheel() {
 
       {/* --- Container วงล้อ --- */}
       <div className="relative w-80 h-80 md:w-[500px] md:h-[500px] z-10">
-        
+
         {/* ลูกศร (Pointer): ทรงยอดเจดีย์ทองคำกลับหัว */}
         <div className="absolute -top-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)]">
-            {/* หัวหมุด */}
-            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-yellow-100 to-yellow-600 border-2 border-yellow-800 shadow-inner mb-[-5px] z-20"></div>
-            {/* ตัวเข็ม */}
-            <div className="w-0 h-0 
+          {/* หัวหมุด */}
+          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-yellow-100 to-yellow-600 border-2 border-yellow-800 shadow-inner mb-[-5px] z-20"></div>
+          {/* ตัวเข็ม */}
+          <div className="w-0 h-0 
               border-l-[25px] border-l-transparent 
               border-r-[25px] border-r-transparent 
               border-t-[60px] border-t-yellow-500
               filter drop-shadow-lg"
-            ></div>
+          ></div>
         </div>
 
         {/* แสง Neon Ring รอบวงล้อ */}
@@ -67,16 +71,16 @@ export default function LuckyWheel() {
         >
           {/* กรอบทอง 3 มิติ (Golden Frame) */}
           <div className="absolute inset-0 rounded-full border-[12px] border-yellow-500/80 shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] z-20 pointer-events-none box-border ring-2 ring-yellow-200/50"></div>
-          
+
           {/* แกนกลาง (Hub) */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-gradient-to-br from-yellow-300 to-yellow-700 rounded-full z-30 shadow-[0_0_15px_rgba(0,0,0,0.8)] border-4 border-yellow-800 flex items-center justify-center">
-             <div className="w-8 h-8 bg-yellow-100 rounded-full opacity-50 blur-sm"></div>
+            <div className="w-8 h-8 bg-yellow-100 rounded-full opacity-50 blur-sm"></div>
           </div>
 
           {/* รูปภาพ */}
-          <img 
+          <img
             src="/mu.png" // ⚠️ อย่าลืมใส่รูปของคุณที่นี่
-            alt="Wheel" 
+            alt="Wheel"
             className="w-full h-full object-cover rounded-full"
             style={{ clipPath: 'circle(50%)' }}
           />
@@ -95,7 +99,7 @@ export default function LuckyWheel() {
         >
           {/* Layer 1: เงาพื้นหลัง */}
           <div className={`absolute inset-0 bg-red-900 rounded-2xl transform translate-y-3 transition-transform duration-100 ${!isSpinning && 'group-active:translate-y-1'}`}></div>
-          
+
           {/* Layer 2: ตัวปุ่มจริง (สีแดงสดตัดทอง) */}
           <div className={`
             absolute inset-0 bg-gradient-to-b from-red-500 to-red-700 rounded-2xl border-2 border-yellow-400/50 
@@ -112,6 +116,12 @@ export default function LuckyWheel() {
           </span>
         </button>
       </div>
+
+      <PopupWordle
+        open={showPopup}
+        onClose={() => setShowPopup(false)}
+      />
+
 
     </div>
   );
