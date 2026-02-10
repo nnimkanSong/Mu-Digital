@@ -33,15 +33,15 @@ export async function POST(request: Request) {
     const resultData = HOROSCOPE_POSITIONS[index];
 
     // 2. บันทึกลง MongoDB ผ่าน Prisma
-    await prisma.spinLog.create({
-      data: {
-        gender: gender,
-        birthDay: Number(day),
-        birthMonth: Number(month),
-        birthYear: Number(year),
-        resultName: resultData.name,
-      },
-    });
+    // await prisma.spinLog.create({
+    //   data: {
+    //     gender: gender,
+    //     birthDay: Number(day),
+    //     birthMonth: Number(month),
+    //     birthYear: Number(year),
+    //     resultName: resultData.name,
+    //   },
+    // });
 
     // 3. ส่งข้อมูลกลับไปให้ Frontend
     return NextResponse.json({
