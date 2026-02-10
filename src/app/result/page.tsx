@@ -298,7 +298,7 @@ function ResultPopup({
                             </button>
 
                             <button
-                                onClick={() => (window.location.href = "/gender-selection")}
+                                onClick={() => (window.location.href = "/gender")}
                                 className="flex gap-2 flex-1 py-3 rounded-xl justify-center items-center font-bold bg-gradient-to-r from-red-600 to-red-800 hover:from-red-500 hover:to-red-700 text-white transition shadow-lg cursor-pointer text-base sm:text-2xl"
                             >
                                 <IterationCw className="size-6" />
