@@ -14,4 +14,5 @@ model horoscope_positions {
   description String
   name        String
   sequence    Int
+  targetDegree Int
 }
