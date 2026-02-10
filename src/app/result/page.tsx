@@ -12,90 +12,90 @@ interface HoroscopeResult {
 }
 
 const HOROSCOPE_POSITIONS: HoroscopeResult[] = [
-	{
-		sequence: 1,
-		targetDegree: 180,
-		name: "เจดีย์",
-		category: "GOOD",
-		description: "เป็นคนดี จะได้เป็นที่พึ่งพาแห่งตนและผู้อื่น (ปีชวด เริ่มต้น)",
-	},
-	{
-		sequence: 2,
-		targetDegree: 155,
-		name: "ฉัตรเงิน",
-		category: "GOOD",
-		description: "จะมีลาภยศ มีความสุข เงินทองไหลมาเทมา",
-	},
-	{
-		sequence: 3,
-		targetDegree: 120,
-		name: "คนคอขาด",
-		category: "BAD",
-		description: "เป็นคนอาภัพ หาที่พึ่งพาไม่ได้ ต้องระวังตัว",
-	},
-	{
-		sequence: 4,
-		targetDegree: 90,
-		name: "เรือนหลวง",
-		category: "GOOD",
-		description: "จะประกอบด้วยยศถาบรรดาศักดิ์ เป็นเจ้าคนนายคน",
-	},
-	{
-		sequence: 5,
-		targetDegree: 65,
-		name: "ปราสาท",
-		category: "GOOD",
-		description: "จะมีความสุข สบาย ก้าวหน้าในหน้าที่การงาน",
-	},
-	{
-		sequence: 6,
-		targetDegree: 30,
-		name: "ราหู",
-		category: "BAD",
-		description: "น้ำใจไม่แน่นอน มักมีเรื่องเดือดร้อนใจ",
-	},
-	{
-		sequence: 7,
-		targetDegree: 10,
-		name: "ฉัตรทอง",
-		category: "GOOD",
-		description: "ผู้ใหญ่จะอุปถัมภ์ค้ำชู มีเกียรติยศชื่อเสียง",
-	},
-	{
-		sequence: 8,
-		targetDegree: -15,
-		name: "เทวดาขี่เต่า",
-		category: "GOOD",
-		description: "ชอบการเปลี่ยนแปลง แต่มักจะสุขสบายในบั้นปลาย",
-	},
-	{
-		sequence: 9,
-		targetDegree: -150,
-		name: "นาคราช",
-		category: "GOOD",
-		description: "มีอำนาจวาสนา บริวารเกรงใจ",
-	},
-	{
-		sequence: 10,
-		targetDegree: -120,
-		name: "แม่มด",
-		category: "GOOD",
-		description: "ผู้ใหญ่จะให้ความเมตตาปรานี มีวิชาความรู้",
-	},
-	{
-		sequence: 11,
-		targetDegree: -90,
-		name: "พ่อหมอ",
-		category: "GOOD",
-		description: "เจ้านายและขุนนางผู้ใหญ่จะเมตตา เลี้ยงดู",
-	},
-	{
-		sequence: 12,
-		targetDegree: -60,
-		name: "คนต้องขื่อคา",
-		category: "BAD",
-		description: "ชะตาไม่คงที่ มักดีตอนต้นและลำบากตอนปลาย หรือต้องโทษ",
-	},
+    { 
+        sequence: 1, 
+        targetDegree: 180, 
+        name: 'เจดีย์', 
+        category: 'GOOD', 
+        description: 'พื้นดวง: เป็นคนใจบุญ มีความยุติธรรม เป็นที่พึ่งพาของญาติพี่น้อง เทวดาย่อมคุ้มครอง ศัตรูทำอันตรายมิได้ \n จร: ปีนี้จะมีความสุข มีลาภเงินทอง ทำราชการจะได้เลื่อนตำแหน่ง คดีความจะชนะ มีเสน่ห์แก่คนทั้งหลาย' 
+    },
+    { 
+        sequence: 2, 
+        targetDegree: 155, 
+        name: 'ฉัตรเงิน', 
+        category: 'GOOD', 
+        description: 'พื้นดวง: เป็นคนมีเสน่ห์ เป็นที่โปรดปรานของเจ้านาย มีความสุขสบายยิ่งนัก \n จร: ปีนี้จะมีลาภยศ มีความสุข เงินทองไหลมาเทมา หรือจะได้สัตว์ 4 เท้า 2 เท้า ถ้าทำราชการจะได้เลื่อนตำแหน่ง' 
+    },
+    { 
+        sequence: 3, 
+        targetDegree: 120, 
+        name: 'คนคอขาด', 
+        category: 'BAD', 
+        description: 'พื้นดวง: เป็นคนอาภัพ หาที่พึ่งพามิได้ มีแต่คนคอยหาทุกข์โทษให้ สิ่งของเงินทองมักจะเสียไปเป็นนิจ \n จร: ปีนี้ระวังผู้ใหญ่ให้โทษ จะเกิดถ้อยความ เลือดตกยางออก หรือเสียของรัก' 
+    },
+    { 
+        sequence: 4, 
+        targetDegree: 90, 
+        name: 'เรือนหลวง', 
+        category: 'GOOD', 
+        description: 'พื้นดวง: จะประกอบด้วยยศถาบรรดาศักดิ์ เป็นที่ชอบใจของเจ้านายและสมณชีพราหมณ์ จะตั้งตัวได้เป็นหลักฐาน \n จร: ปีนี้จะได้ลาภเงินทองหรือสัตว์ 4 เท้า 2 เท้า จะได้ที่พึ่งพาอาศัย คนโสดจะได้พบเนื้อคู่' 
+    },
+    { 
+        sequence: 5, 
+        targetDegree: 65, 
+        name: 'ปราสาท', 
+        category: 'GOOD', 
+        description: 'พื้นดวง: มีบุญวาสนาสูง จะตั้งตัวเป็นหลักฐานได้ ชะตามีลาภผลพอประมาณ ศัตรูไม่สามารถทำอันตรายได้ \n จร: ปีนี้จะมีความสุขสบาย ก้าวหน้าในหน้าที่การงาน จะได้ลาภยศและบริวาร' 
+    },
+    { 
+        sequence: 6, 
+        targetDegree: 30, 
+        name: 'ราหู', 
+        category: 'BAD', 
+        description: 'พื้นดวง: น้ำใจไม่แน่นอน ถึงยามรักก็รักจริง ถึงยามเกลียดก็เกลียดอย่างเข้ากระดูกดำ เป็นคนเจ้าโทสะและถือตัว \n จร: ปีนี้ให้ระวังเขี้ยวงา อสรพิษกัดต่อย จะบังเกิดความไข้เจ็บ ปวดหัวมัวตา เสียทรัพย์และของรัก' 
+    },
+    { 
+        sequence: 7, 
+        targetDegree: 10, 
+        name: 'ฉัตรทอง', 
+        category: 'GOOD', 
+        description: 'พื้นดวง: เป็นคนใจบุญ มีความยุติธรรม เทวดาย่อมคุ้มครอง เป็นที่โปรดปรานของเจ้านาย \n จร: ปีนี้จะมีความสุขกายสบายใจ มีลาภเงินทองและเกียรติยศชื่อเสียง มีผู้อุปถัมภ์ค้ำชู' 
+    },
+    { 
+        sequence: 8, 
+        targetDegree: -15, 
+        name: 'เทวดาขี่เต่า', 
+        category: 'GOOD', 
+        description: 'พื้นดวง: มักจะอยู่ไม่เป็นที่ ชอบการโยกย้ายและเดินทางท่องเที่ยว มีเพื่อนฝูงมาก ใจไม่ค่อยยั่งยืน \n จร: ปีนี้จะต้องมีการเดินทาง และจะได้ลาภผลเนืองๆ แต่ไม่ใช่ลาภก้อนใหญ่' 
+    },
+    { 
+        sequence: 9, 
+        targetDegree: -60, 
+        name: 'คนต้องขื่อคา', 
+        category: 'BAD', 
+        description: 'พื้นดวง: ชะตาไม่คงที่ มักดีตอนต้นและร้ายตอนปลาย มีเรื่องให้ต้องโทษทัณฑ์หรือเป็นถ้อยความ มักมีศัตรูคอยแสร้งหาโทษอยู่เนืองๆ \n จร: ปีนี้ระวังถ้อยความหรือเรื่องชู้สาว ถ้าเป็นวัยกลางคนให้ระวังบุตรหลานจะนำความเดือดร้อนมาให้ ระวังอุบัติเหตุยามค่ำคืน' 
+    },
+    { 
+        sequence: 10, 
+        targetDegree: -90, 
+        name: 'พ่อหมอ', 
+        category: 'GOOD', 
+        description: 'พื้นดวง: เจ้านายและขุนนางผู้ใหญ่จะเมตตาเอ็นดู ให้ลาภผลและยศศักดิ์ตามสมควร \n จร: ปีนี้จะได้ท่านผู้ใหญ่เป็นที่พึ่ง จะได้รับความเมตตาปรานีและได้รับความอุปถัมภ์' 
+    },
+    { 
+        sequence: 11, 
+        targetDegree: -120, 
+        name: 'แม่มด', 
+        category: 'GOOD', 
+        description: 'พื้นดวง: เป็นคนปากดี เข้าใจพูดแต่มักไม่ชอบทำ นิสัยติดเจ้าชู้ รู้หลักเหลี่ยมและรู้หลบหลีก มีลาภสักการะเนืองๆ \n จร: ปีนี้ให้เข้าหาเจ้านายที่เป็นผู้หญิง จะได้รับความช่วยเหลือและได้ลาภเกื้อกูล' 
+    },
+    { 
+        sequence: 12, 
+        targetDegree: -150, 
+        name: 'นาคราช', 
+        category: 'GOOD', 
+        description: 'พื้นดวง: มีอำนาจวาสนา บริวารเกรงใจ เป็นคนเจ้าโทสะ ถือตัว และเชื่อมั่นในตัวเองสูง \n จร: ปีนี้ให้ระวังเรื่องเจ็บไข้ได้ป่วยทั่วสรรพางค์กาย ปวดหัวมัวตา ระวังของมีคมและเสียทรัพย์สินเงินทอง' 
+    },
 ];
 
 function WheelContent() {
@@ -238,9 +238,10 @@ function WheelContent() {
 
 									<div className="w-14 h-1 bg-yellow-500 mx-auto mb-4 rounded-full"></div>
 
-									<p className="text-yellow-100/90 text-base leading-relaxed mb-6">
-										{result.description}
-									</p>
+                                {/* เพิ่ม whitespace-pre-line ตรงนี้เพื่อให้ \n ทำงาน */}
+                                <p className="text-yellow-100/90 text-base leading-relaxed mb-6 whitespace-pre-line">
+                                    {result.description}
+                                </p>
 
 									<div className="flex gap-3">
 										<button
@@ -251,7 +252,7 @@ function WheelContent() {
 										</button>
 
 										<button
-											onClick={() => (window.location.href = "/")}
+											onClick={() => (window.location.href = "/gender")}
 											className="flex-1 py-3 rounded-xl font-bold bg-gradient-to-r from-red-600 to-red-800 hover:from-red-500 hover:to-red-700 text-white transition shadow-lg"
 										>
 											↻ ทำนายใหม่
