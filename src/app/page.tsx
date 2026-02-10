@@ -1,8 +1,9 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion"; // เพิ่ม AnimatePresence
 import Image from "next/image";
+import LoadingScreen from "@/app/components/LoadingScreen"; // Import LoadingScreen
 
 type Star = {
   top: string;
@@ -16,6 +17,19 @@ export default function Home() {
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
   const [stars, setStars] = useState<Star[]>([]);
+  
+  // 1. เพิ่ม State สำหรับ Loading
+  const [isLoading, setIsLoading] = useState(false);
+
+  // 2. ฟังก์ชันเมื่อกดปุ่มเริ่ม (เริ่มโหลด)
+  const handleStartClick = () => {
+    setIsLoading(true);
+  };
+
+  // 3. ฟังก์ชันเปลี่ยนหน้า (เรียกเมื่อโหลดเสร็จ)
+  const handleFinishLoading = () => {
+    router.push("/gender");
+  };
 
   useEffect(() => {
     setMounted(true);
@@ -33,6 +47,17 @@ export default function Home() {
 
   return (
     <div className="relative h-screen w-full overflow-hidden font-serif bg-black">
+      
+      {/* 4. แทรก LoadingScreen */}
+      <AnimatePresence>
+        {isLoading && (
+          <LoadingScreen 
+            duration={2000} // ตั้งเวลาโหลด 2 วินาที
+            onFinish={handleFinishLoading} 
+          />
+        )}
+      </AnimatePresence>
+
       <div className="bg-black w-70 h-10 absolute right-0 bottom-4 z-50" />
       {/* 1. Spline Scene */}
       <iframe
@@ -66,24 +91,22 @@ export default function Home() {
           ))}
         </div>
       )}
+
+      {/* Facebook Link Button */}
       <button
         onClick={() => router.push("https://www.facebook.com/ComEngKMITLPCC")}
-        // ปรับตำแหน่ง: มือถือ (top-3 right-3) -> จอใหญ่ (top-4 right-4)
         className="absolute top-3 right-3 md:top-4 md:right-4 z-30 cursor-pointer hover:scale-110 transition-transform duration-200"
       >
         <Image
           src="/CElogo.png"
           alt="CE Logo"
-          // width/height ตรงนี้คือความละเอียดของภาพต้นฉบับ (Aspect Ratio)
           width={100}
           height={100}
-          // ใช้ Class ควบคุมขนาดการแสดงผลจริง:
-          // มือถือ = 64px (w-16)
-          // จอขนาดกลางขึ้นไป = 96px (w-24) หรือจะใส่ w-auto ก็ได้ถ้าอยากให้เท่า width property ด้านบน
           className="w-16 h-16 md:w-24 md:h-24 object-contain"
           priority
         />
       </button>
+
       {/* 4. Content with Motion */}
       <div className="relative z-30 flex h-full flex-col items-center justify-center text-center px-6 pointer-events-none">
         <motion.p
@@ -128,9 +151,11 @@ export default function Home() {
           transition={{ delay: 1.2 }}
           className="mt-10 pointer-events-auto"
         >
+          {/* 5. แก้ไขปุ่มให้เรียก handleStartClick และ Disable เมื่อโหลด */}
           <button
-            onClick={() => router.push("/gender")}
-            className="rounded-full border border-purple-400/60 px-8 py-3 text-[25px] text-purple-200 hover:bg-purple-400/20 hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition cursor-pointer"
+            onClick={handleStartClick}
+            disabled={isLoading}
+            className={`rounded-full border border-purple-400/60 px-8 py-3 text-[25px] text-purple-200 hover:bg-purple-400/20 hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition cursor-pointer ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
             เริ่มวิเคราะห์ดวง
           </button>
