@@ -1,6 +1,7 @@
 services:
   app-prod:
-    image: onlyakr/mu-digital:latest
+    # image: onlyakr/mu-digital:latest
+    build: 
     container_name: mu-digital-prod
     restart: always
     environment:
