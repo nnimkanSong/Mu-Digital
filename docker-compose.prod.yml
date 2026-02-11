@@ -1,6 +1,6 @@
 services:
   app-prod:
-    image: projectyear3/kmitl-fair-fullstack:latest
+    image: onlyakr/mu-digital:latest
     container_name: mu-digital-prod
     restart: always
     environment:
